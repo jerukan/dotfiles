@@ -208,7 +208,7 @@ shift + ctrl - 0x21 : yabai -m window --focus stack.next || yabai -m window --fo
 shift + ctrl - 0x1E : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
 # balance size of windows
-shift + alt - 0 : yabai -m space --balance
+alt + cmd - 0 : yabai -m space --balance
 
 # toggle window split type
 alt + cmd - e : yabai -m window --toggle split

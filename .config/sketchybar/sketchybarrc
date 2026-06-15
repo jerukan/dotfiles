@@ -12,7 +12,11 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar \
+  position=top \
+  height=40 \
+  blur_radius=30 \
+  color=0x00000000
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -20,16 +24,22 @@ sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-  padding_left=5
-  padding_right=5
+  padding_left=4
+  padding_right=4
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
+  icon.color=0xffe2bfff
   label.color=0xffffffff
-  icon.padding_left=4
+  icon.padding_left=8
   icon.padding_right=4
   label.padding_left=4
-  label.padding_right=4
+  label.padding_right=8
+  background.color=0xcc1e1e2e
+  background.border_color=0xcccba6f7
+  background.border_width=1
+  background.corner_radius=8
+  background.height=30
+  blur_radius=30
 )
 sketchybar --default "${default[@]}"
 
@@ -45,11 +55,11 @@ do
   space=(
     space="$sid"
     icon="${SPACE_ICONS[i]}"
-    icon.padding_left=7
-    icon.padding_right=7
+    icon.padding_left=9
+    icon.padding_right=9
     background.color=0x40ffffff
-    background.corner_radius=5
-    background.height=25
+    # background.corner_radius=5
+    # background.height=25
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
     click_script="yabai -m space --focus $sid"
@@ -62,32 +72,33 @@ done
 # only the properties deviating from the current defaults need to be set
 
 sketchybar \
-  --add item yabai_float left \
-  --set yabai_float update_freq=3 \
-  --set yabai_float script="$PLUGIN_DIR/yabai_float.sh" \
-  --set yabai_float click_script="$PLUGIN_DIR/yabai_float_click.sh" \
-  --subscribe yabai_float space_change front_app_switched \
   --add item front_app left \
-  --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+  --set front_app icon.font="sketchybar-app-font:Regular:17.0" icon.drawing=on script="$PLUGIN_DIR/front_app.sh" \
   --subscribe front_app front_app_switched
 
 ##### Adding Media Items #####
+# Each item turns its own background off; a single bracket draws the box
+# around the whole media group.
 sketchybar \
   --add item media left \
-  --set media update_freq=3 icon=󰝚 drawing=off \
-        script="$PLUGIN_DIR/media.sh" \
+  --set media update_freq=3 icon=󰝚 drawing=off background.drawing=off \
+        script="$PLUGIN_DIR/media.sh" label.padding_right=4 \
   --add item media_timer left \
-  --set media_timer drawing=off update_freq=1 icon.drawing=off \
-        script="$PLUGIN_DIR/media_timer.sh" \
+  --set media_timer drawing=off update_freq=1 icon.drawing=off background.drawing=off \
+        script="$PLUGIN_DIR/media_timer.sh" icon.padding_left=4 \
   --add item media_prev left \
-  --set media_prev drawing=off label.drawing=off icon="󰒮" \
-        click_script="$PLUGIN_DIR/media_prev.sh" \
+  --set media_prev drawing=off label.drawing=off icon="󰒮" background.drawing=off \
+        click_script="$PLUGIN_DIR/media_prev.sh" icon.padding_left=4 \
   --add item media_play left \
-  --set media_play drawing=off label.drawing=off \
-        click_script="$PLUGIN_DIR/media_play.sh" \
+  --set media_play drawing=off label.drawing=off background.drawing=off \
+        click_script="$PLUGIN_DIR/media_play.sh" icon.padding_left=4 \
   --add item media_next left \
-  --set media_next drawing=off label.drawing=off icon="󰒭" \
-        click_script="$PLUGIN_DIR/media_next.sh" \
+  --set media_next drawing=off label.drawing=off icon="󰒭" background.drawing=off \
+        click_script="$PLUGIN_DIR/media_next.sh" icon.padding_left=4 \
+  --add bracket media_group media media_timer media_prev media_play media_next \
+  --set media_group background.color=0xcc1e1e2e \
+        background.border_color=0xcccba6f7 background.border_width=1 \
+        background.corner_radius=8 background.height=30
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.

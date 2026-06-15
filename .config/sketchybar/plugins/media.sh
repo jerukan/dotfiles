@@ -8,7 +8,8 @@ if [ -z "$TITLE" ]; then
              --set media_timer drawing=off \
              --set media_prev  drawing=off \
              --set media_play  drawing=off \
-             --set media_next  drawing=off
+             --set media_next  drawing=off \
+             --set media_group drawing=off
   exit 0
 fi
 
@@ -31,8 +32,11 @@ else
   PLAY_ICON="󰏤"
 fi
 
-sketchybar --set media       drawing=on label="$LABEL" \
-           --set media_timer drawing=on \
-           --set media_prev  drawing=on \
-           --set media_play  drawing=on icon="$PLAY_ICON" \
-           --set media_next  drawing=on
+sketchybar \
+  --animate tanh 5 \
+  --set media       drawing=on label="$LABEL" \
+  --set media_timer drawing=on \
+  --set media_prev  drawing=on \
+  --set media_play  drawing=on icon="$PLAY_ICON" \
+  --set media_next  drawing=on \
+  --set media_group drawing=on

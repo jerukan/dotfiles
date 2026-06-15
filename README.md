@@ -7,6 +7,7 @@ Mostly macOS configuration rc files and such.
 Dependency reminders:
 1. nowplaying-cli
 2. hack nerd font
+3. https://github.com/kvndrsslr/sketchybar-app-font
 
 ## Running things reminders
 

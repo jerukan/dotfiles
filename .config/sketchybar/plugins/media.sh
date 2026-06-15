@@ -17,14 +17,12 @@ ARTIST=$(echo "$RAW" | jq -r '.kMRMediaRemoteNowPlayingInfoArtist // empty')
 RATE=$(echo "$RAW"   | jq -r '.kMRMediaRemoteNowPlayingInfoPlaybackRate // 0')
 
 if [ -n "$ARTIST" ]; then
-  LABEL="$ARTIST - $TITLE"
+  LABEL="$TITLE - $ARTIST"
 else
   LABEL="$TITLE"
 fi
-MAX=35
-if [ ${#LABEL} -gt $MAX ]; then
-  LABEL="${LABEL:0:$((MAX - 1))}…"
-fi
+# Truncation/scrolling is handled by sketchybar via label.max_chars and
+# label.scroll_duration on the media item (see sketchybarrc).
 
 if [ "$RATE" = "0" ] || [ "$RATE" = "0.0" ]; then
   PLAY_ICON="󰐊"

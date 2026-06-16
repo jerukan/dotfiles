@@ -4,12 +4,14 @@ RAW=$(nowplaying-cli get-raw 2>/dev/null)
 TITLE=$(echo "$RAW" | jq -r '.kMRMediaRemoteNowPlayingInfoTitle // empty')
 
 if [ -z "$TITLE" ]; then
-  sketchybar --set media       drawing=off \
-             --set media_timer drawing=off \
-             --set media_prev  drawing=off \
-             --set media_play  drawing=off \
-             --set media_next  drawing=off \
-             --set media_group drawing=off
+  sketchybar --set media          drawing=off \
+             --set media_timer    drawing=off \
+             --set media_sep      drawing=off \
+             --set media_prev     drawing=off \
+             --set media_play     drawing=off \
+             --set media_next     drawing=off \
+             --set media_group    drawing=off \
+             --set media_controls drawing=off
   exit 0
 fi
 
@@ -32,9 +34,11 @@ fi
 
 sketchybar \
   --animate tanh 5 \
-  --set media       drawing=on label="$LABEL" \
-  --set media_timer drawing=on \
-  --set media_prev  drawing=on \
-  --set media_play  drawing=on icon="$PLAY_ICON" \
-  --set media_next  drawing=on \
-  --set media_group drawing=on
+  --set media          drawing=on label="$LABEL" \
+  --set media_timer    drawing=on \
+  --set media_sep      drawing=on \
+  --set media_prev     drawing=on \
+  --set media_play     drawing=on icon="$PLAY_ICON" \
+  --set media_next     drawing=on \
+  --set media_group    drawing=on \
+  --set media_controls drawing=on

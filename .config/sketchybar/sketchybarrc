@@ -80,23 +80,31 @@ sketchybar \
 # Each item turns its own background off; a single bracket draws the box
 # around the whole media group.
 sketchybar \
+  --add item media_prev left \
+  --set media_prev drawing=off label.drawing=off icon="󰒮" background.drawing=off \
+        click_script="$PLUGIN_DIR/media_prev.sh" icon.padding_right=4 \
+  --add item media_play left \
+  --set media_play drawing=off label.drawing=off background.drawing=off \
+        click_script="$PLUGIN_DIR/media_play.sh" icon.padding_left=4 icon.padding_right=4 \
+  --add item media_next left \
+  --set media_next drawing=off label.drawing=off icon="󰒭" background.drawing=off \
+        click_script="$PLUGIN_DIR/media_next.sh" icon.padding_left=4 icon.padding_right=8 \
+  --add bracket media_controls media_prev media_play media_next \
+  --set media_controls background.color=0xcc1e1e2e \
+        background.border_color=0xcccba6f7 background.border_width=1 \
+        background.corner_radius=8 background.height=30 \
+  --add item media_sep left \
+  --set media_sep drawing=off icon.drawing=off label.drawing=off \
+        background.drawing=off width=4 \
   --add item media left \
   --set media update_freq=3 icon=󰝚 drawing=off background.drawing=off \
-        script="$PLUGIN_DIR/media.sh" label.padding_right=4 \
+        script="$PLUGIN_DIR/media.sh" icon.padding_left=8 icon.padding_right=4 \
+        label.padding_left=4 label.padding_right=4 \
         label.max_chars=35 scroll_texts=on label.scroll_duration=400 \
   --add item media_timer left \
   --set media_timer drawing=off update_freq=1 icon.drawing=off background.drawing=off \
-        script="$PLUGIN_DIR/media_timer.sh" icon.padding_left=4 \
-  --add item media_prev left \
-  --set media_prev drawing=off label.drawing=off icon="󰒮" background.drawing=off \
-        click_script="$PLUGIN_DIR/media_prev.sh" icon.padding_left=4 \
-  --add item media_play left \
-  --set media_play drawing=off label.drawing=off background.drawing=off \
-        click_script="$PLUGIN_DIR/media_play.sh" icon.padding_left=4 \
-  --add item media_next left \
-  --set media_next drawing=off label.drawing=off icon="󰒭" background.drawing=off \
-        click_script="$PLUGIN_DIR/media_next.sh" icon.padding_left=4 \
-  --add bracket media_group media media_timer media_prev media_play media_next \
+        script="$PLUGIN_DIR/media_timer.sh" label.padding_left=4 label.padding_right=8 \
+  --add bracket media_group media media_timer \
   --set media_group background.color=0xcc1e1e2e \
         background.border_color=0xcccba6f7 background.border_width=1 \
         background.corner_radius=8 background.height=30

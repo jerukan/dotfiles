@@ -34,6 +34,7 @@ fi
 
 sketchybar \
   --animate tanh 5 \
+  --set media_sep_left      drawing=on \
   --set media          drawing=on label="$LABEL" \
   --set media_timer    drawing=on \
   --set media_sep      drawing=on \

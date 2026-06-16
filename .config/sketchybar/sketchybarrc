@@ -80,6 +80,9 @@ sketchybar \
 # Each item turns its own background off; a single bracket draws the box
 # around the whole media group.
 sketchybar \
+  --add item media_sep_left left \
+  --set media_sep_left drawing=off icon.drawing=off label.drawing=off \
+        background.drawing=off width=4 \
   --add item media_prev left \
   --set media_prev drawing=off label.drawing=off icon="󰒮" background.drawing=off \
         click_script="$PLUGIN_DIR/media_prev.sh" icon.padding_right=4 \
@@ -95,7 +98,7 @@ sketchybar \
         background.corner_radius=8 background.height=30 \
   --add item media_sep left \
   --set media_sep drawing=off icon.drawing=off label.drawing=off \
-        background.drawing=off width=4 \
+        background.drawing=off width=8 \
   --add item media left \
   --set media update_freq=3 icon=󰝚 drawing=off background.drawing=off \
         script="$PLUGIN_DIR/media.sh" icon.padding_left=8 icon.padding_right=4 \

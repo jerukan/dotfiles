@@ -184,6 +184,7 @@ ctrl + alt - 1 : yabai -m window --space 1;
 ctrl + alt - 2 : yabai -m window --space 2;
 ctrl + alt - 3 : yabai -m window --space 3;
 ctrl + alt - 4 : yabai -m window --space 4;
+ctrl + alt - 5 : yabai -m window --space 5;
 
 # increase window size
 shift + alt - w : yabai -m window --resize top:0:-100

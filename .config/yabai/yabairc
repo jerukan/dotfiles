@@ -30,7 +30,8 @@ Cisco Secure Client
 Microsoft Outlook
 Minecraft Launcher
 java
-Slay the Spire 2"
+Slay the Spire 2
+Google Drive"
 
 echo "$excluded_apps" | while IFS= read -r app; do
   yabai -m rule --add app="^${app}$" manage=off

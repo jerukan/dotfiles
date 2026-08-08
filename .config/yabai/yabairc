@@ -33,7 +33,10 @@ Minecraft Launcher
 java
 Slay the Spire 2
 Google Drive
-GIMP"
+GIMP
+Blender
+Battle.net
+Steam"
 
 echo "$excluded_apps" | while IFS= read -r app; do
   yabai -m rule --add app="^${app}$" manage=off

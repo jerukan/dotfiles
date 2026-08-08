@@ -56,7 +56,7 @@ yabai -m config window_gap 8
 
 # mouse settings
 # yabai -m config mouse_follows_focus on
-yabai -m config mouse_modifier alt
+# yabai -m config mouse_modifier alt
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action stack

@@ -2,6 +2,18 @@
 
 Mostly macOS configuration rc files and such.
 
+## Set up and simlink the config folders
+
+```shell
+cd
+git clone git@github.com:jerukan/dotfiles.git
+cd ~/.config
+ln -s ~/dotfiles/yabai yabai
+ln -s ~/dotfiles/skhd skhd
+ln -s ~/dotfiles/sketchybar sketchybar
+ln -s ~/dotfiles/borders borders
+```
+
 ## Installing the main software
 
 [yabai](https://github.com/asmvik/yabai):

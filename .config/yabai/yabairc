@@ -40,7 +40,8 @@ Battle.net
 Steam
 YouTube Music
 DaVinci Resolve
-Affinity"
+Affinity
+VirtualBox"
 
 echo "$excluded_apps" | while IFS= read -r app; do
   yabai -m rule --add app="^${app}$" manage=off

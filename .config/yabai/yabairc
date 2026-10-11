@@ -42,7 +42,8 @@ YouTube Music
 DaVinci Resolve
 Affinity
 VirtualBox
-VirtualBox VM"
+VirtualBox VM
+Krita"
 
 echo "$excluded_apps" | while IFS= read -r app; do
   yabai -m rule --add app="^${app}$" manage=off

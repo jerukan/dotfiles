@@ -801,7 +801,7 @@ function __icon_map() {
    "Kodi")
         icon_result=":kodi:"
         ;;
-   "krita")
+   "Krita")
         icon_result=":krita:"
         ;;
    "LanguageTool for Desktop")

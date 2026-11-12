@@ -369,7 +369,7 @@ return {
 	[ [[kitty]] ] = ":kitty:",
 	[ [[KiwiDesk]] ] = ":kiwidesk:",
 	[ [[Kodi]] ] = ":kodi:",
-	[ [[krita]] ] = ":krita:",
+	[ [[Krita]] ] = ":krita:",
 	[ [[LanguageTool for Desktop]] ] = ":languagetool_for_desktop:",
 	[ [[Latest]] ] = ":latest:",
 	[ [[League of Legends]] ] = ":league_of_legends:",
